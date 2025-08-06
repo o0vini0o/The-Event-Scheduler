@@ -1,3 +1,6 @@
+
+import React from "react";
+
 import { Link } from "react-router";
 const Heading = () => {
   return (
@@ -5,16 +8,20 @@ const Heading = () => {
       <h1 className="btn btn-ghost text-3xl">Event Scheduler</h1>
       <nav>
         <ul className="flex flex-col sm:flex-row">
-          <li className="btn btn-ghost">
-            <Link to="/">Home</Link>
-          </li>
-          <li className="btn btn-ghost">Add Event</li>
-          <li className="btn btn-ghost">
-            <Link to="/SignIn">Anmenden</Link>{" "}
-          </li>
-          <li className="btn btn-ghost">
-            <Link to="/SignUp">Registerung</Link>
-          </li>
+
+          <Link className="btn btn-ghost" to="/">
+            Home
+          </Link>
+          <Link className="btn btn-ghost" to="/api/events/new">
+            Add Event
+          </Link>
+          <Link className="btn btn-ghost" to="/">
+            Anmenden
+          </Link>
+          <Link className="btn btn-ghost" to="/">
+            Abmelden
+          </Link>
+
         </ul>
       </nav>
     </header>

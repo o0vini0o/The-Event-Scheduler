@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/index.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1754434705889,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1754434705889,
+            "name": "Commit-0",
+            "content": "@import url(\"https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap\");\n@import \"tailwindcss\";\n@plugin 'daisyui' {\n  themes: corporate --default;\n}\n\n.Toastify__toast {\n  font-family: \"Outfit\", sans-serif !important;\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/context/EventContext.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1754438869389,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1754444033949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,11 @@\n \n export const EventContextProvider = ({ children }) => {\n   // State to store the events\n   const [events, setEvents] = useState([]);\n+\n+  const [isLoading, setIsLoading] = useState(true);\n+  const [error, setError] = useState(false);\n   // Fetch events from the server\n   useEffect(() => {\n     const fetchData = async () => {\n       try {\n@@ -16,12 +19,16 @@\n         const data = await response.json();\n         console.log(\"data\", data);\n         // return data;\n         setEvents(data.results);\n+        setError(false);\n         // return data;\n       } catch (error) {\n         console.error(error);\n+        setError(true);\n         return null;\n+      } finally {\n+        setIsLoading(false);\n       }\n     };\n \n     fetchData();\n"
+                },
+                {
+                    "date": 1754444054603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,8 +33,12 @@\n \n     fetchData();\n   }, []);\n \n-  return <EventContext value={{ events, setEvents }}>{children}</EventContext>;\n+  return (\n+    <EventContext value={{ events, setEvents, isLoading, error }}>\n+      {children}\n+    </EventContext>\n+  );\n };\n \n export default EventContext;\n"
+                }
+            ],
+            "date": 1754438869389,
+            "name": "Commit-0",
+            "content": "import React, { createContext, useState, useEffect } from \"react\";\n\nconst EventContext = createContext();\n\nexport const EventContextProvider = ({ children }) => {\n  // State to store the events\n  const [events, setEvents] = useState([]);\n  // Fetch events from the server\n  useEffect(() => {\n    const fetchData = async () => {\n      try {\n        const response = await fetch(\"http://localhost:3001/api/events\");\n        if (!response.ok) {\n          throw new Error(\"Error fetching data\");\n        }\n        const data = await response.json();\n        console.log(\"data\", data);\n        // return data;\n        setEvents(data.results);\n        // return data;\n      } catch (error) {\n        console.error(error);\n        return null;\n      }\n    };\n\n    fetchData();\n  }, []);\n\n  return <EventContext value={{ events, setEvents }}>{children}</EventContext>;\n};\n\nexport default EventContext;\n"
+        }
+    ]
+}

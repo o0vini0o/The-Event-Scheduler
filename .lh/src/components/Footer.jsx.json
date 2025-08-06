@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/components/Footer.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1754435006909,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1754449647896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from \"react\";\n \n const Footer = () => {\n   return (\n-    <footer className=\"footer footer-center p-4 bg-primary mt-16 text-lg sm:text-xl  \">\n+    <footer className=\"footer footer-center p-4 bg-base-200 mt-16 text-lg sm:text-xl  \">\n       <p>\n         {\" \"}\n         &copy;{new Date().getFullYear()} Made by Yan Yang and Brice Arnaud\n         Habenicht\n"
+                },
+                {
+                    "date": 1754449658448,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from \"react\";\n \n const Footer = () => {\n   return (\n-    <footer className=\"footer footer-center p-4 bg-base-200 mt-16 text-lg sm:text-xl  \">\n+    <footer className=\"footer footer-center p-4 bg-base-600 mt-16 text-lg sm:text-xl  \">\n       <p>\n         {\" \"}\n         &copy;{new Date().getFullYear()} Made by Yan Yang and Brice Arnaud\n         Habenicht\n"
+                },
+                {
+                    "date": 1754449663687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,15 @@\n+import React from \"react\";\n+\n+const Footer = () => {\n+  return (\n+    <footer className=\"footer footer-center p-4 bg-base-100 mt-16 text-lg sm:text-xl  \">\n+      <p>\n+        {\" \"}\n+        &copy;{new Date().getFullYear()} Made by Yan Yang and Brice Arnaud\n+        Habenicht\n+      </p>\n+    </footer>\n+  );\n+};\n+\n+export default Footer;\n"
+                },
+                {
+                    "date": 1754449672520,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,15 @@\n+import React from \"react\";\n+\n+const Footer = () => {\n+  return (\n+    <footer className=\"footer footer-center p-4 bg-base-200 mt-16 text-lg sm:text-xl  \">\n+      <p>\n+        {\" \"}\n+        &copy;{new Date().getFullYear()} Made by Yan Yang and Brice Arnaud\n+        Habenicht\n+      </p>\n+    </footer>\n+  );\n+};\n+\n+export default Footer;\n"
+                },
+                {
+                    "date": 1754449712974,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from \"react\";\n \n const Footer = () => {\n   return (\n-    <footer className=\"footer footer-center p-4 bg-base-200 mt-16 text-lg sm:text-xl  \">\n+    <footer className=\"footer footer-center p-4 bg-primary mt-16 text-lg sm:text-xl  text-white\">\n       <p>\n         {\" \"}\n         &copy;{new Date().getFullYear()} Made by Yan Yang and Brice Arnaud\n         Habenicht\n@@ -12,34 +12,4 @@\n   );\n };\n \n export default Footer;\n-import React from \"react\";\n-\n-const Footer = () => {\n-  return (\n-    <footer className=\"footer footer-center p-4 bg-base-100 mt-16 text-lg sm:text-xl  \">\n-      <p>\n-        {\" \"}\n-        &copy;{new Date().getFullYear()} Made by Yan Yang and Brice Arnaud\n-        Habenicht\n-      </p>\n-    </footer>\n-  );\n-};\n-\n-export default Footer;\n-import React from \"react\";\n-\n-const Footer = () => {\n-  return (\n-    <footer className=\"footer footer-center p-4 bg-base-600 mt-16 text-lg sm:text-xl  \">\n-      <p>\n-        {\" \"}\n-        &copy;{new Date().getFullYear()} Made by Yan Yang and Brice Arnaud\n-        Habenicht\n-      </p>\n-    </footer>\n-  );\n-};\n-\n-export default Footer;\n"
+                }
+            ],
+            "date": 1754435006909,
+            "name": "Commit-0",
+            "content": "import React from \"react\";\n\nconst Footer = () => {\n  return (\n    <footer className=\"footer footer-center p-4 bg-primary mt-16 text-lg sm:text-xl  \">\n      <p>\n        {\" \"}\n        &copy;{new Date().getFullYear()} Made by Yan Yang and Brice Arnaud\n        Habenicht\n      </p>\n    </footer>\n  );\n};\n\nexport default Footer;\n"
+        }
+    ]
+}

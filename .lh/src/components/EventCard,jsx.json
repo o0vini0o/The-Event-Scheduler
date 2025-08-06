@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/components/EventCard,jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1754433111389,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1754433129839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,14 @@\n+import React from \"react\";\n+\n+const EventCard = ({ id,title, description,  startDate,location, latitude,longitude }) => {\n+  return (\n+    <div>\n+      <h2>{title}</h2>\n+      <p>{description}</p>\n+      <p>{startDate}</p>\n+      <p>{endDate}</p>\n+    </div>\n+  );\n+};\n+\n+export default EventCard;\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1754433111389,
+            "name": "Commit-0",
+            "content": "import React from \"react\";\n\nconst EventCard = ({ id,title, description,  startDate,location, latitude,longitude }) => {\n  return (\n    <div>\n      <h2>{title}</h2>\n      <p>{description}</p>\n      <p>{startDate}</p>\n      <p>{endDate}</p>\n    </div>\n  );\n};\n\nexport default EventCard;"
+        }
+    ]
+}

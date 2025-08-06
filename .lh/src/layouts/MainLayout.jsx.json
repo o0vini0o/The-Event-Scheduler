@@ -1,0 +1,58 @@
+{
+    "sourceFile": "src/layouts/MainLayout.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1754430930222,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1754430935333,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import React from \"react\";\n import { Outlet } from \"react-router\";\n+import { Heading } from \"../components\";\n \n const MainLayout = () => {\n   return (\n     <div>\n"
+                },
+                {
+                    "date": 1754432133929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,11 @@\n const MainLayout = () => {\n   return (\n     <div>\n       <Heading />\n-\n-      <Outlet />\n+      <main>\n+        <Outlet />\n+      </main>\n     </div>\n   );\n };\n \n"
+                },
+                {
+                    "date": 1754432159571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,11 +5,10 @@\n const MainLayout = () => {\n   return (\n     <div>\n       <Heading />\n-      <main>\n-        <Outlet />\n-      </main>\n+\n+      <Outlet />\n     </div>\n   );\n };\n \n"
+                },
+                {
+                    "date": 1754434891178,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,30 @@\n import React from \"react\";\n+import { ToastContainer, Bounce, Slide } from \"react-toastify\";\n import { Outlet } from \"react-router\";\n import { Heading } from \"../components\";\n \n const MainLayout = () => {\n   return (\n     <div>\n       <Heading />\n \n+      <ToastContainer\n+        className=\"mt-16 text-lg\"\n+        position=\"top-center\"\n+        autoClose={5000}\n+        hideProgressBar={false}\n+        newestOnTop={false}\n+        closeOnClick\n+        rtl={false}\n+        pauseOnFocusLoss\n+        draggable\n+        pauseOnHover\n+        theme=\"dark\"\n+        limit={2}\n+        transition={Bounce}\n+      />\n+\n       <Outlet />\n     </div>\n   );\n };\n"
+                },
+                {
+                    "date": 1754435009566,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,13 @@\n import React from \"react\";\n import { ToastContainer, Bounce, Slide } from \"react-toastify\";\n import { Outlet } from \"react-router\";\n import { Heading } from \"../components\";\n+import Footer from \"../components/Footer\";\n \n const MainLayout = () => {\n   return (\n-    <div>\n+    <>\n       <Heading />\n \n       <ToastContainer\n         className=\"mt-16 text-lg\"\n@@ -23,10 +24,14 @@\n         limit={2}\n         transition={Bounce}\n       />\n \n-      <Outlet />\n-    </div>\n+      <main>\n+        <Outlet />\n+      </main>\n+\n+      <Footer />\n+    </>\n   );\n };\n \n export default MainLayout;\n"
+                },
+                {
+                    "date": 1754435219942,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,38 @@\n+import React from \"react\";\n+import { ToastContainer, Bounce, Slide } from \"react-toastify\";\n+import { Outlet } from \"react-router\";\n+import { Heading } from \"../components\";\n+import Footer from \"../components/Footer\";\n+\n+const MainLayout = () => {\n+  return (\n+    <>\n+      <div>\n+        <Heading />\n+        <ToastContainer\n+          className=\"mt-16 text-lg\"\n+          position=\"top-center\"\n+          autoClose={5000}\n+          hideProgressBar={false}\n+          newestOnTop={false}\n+          closeOnClick\n+          rtl={false}\n+          pauseOnFocusLoss\n+          draggable\n+          pauseOnHover\n+          theme=\"dark\"\n+          limit={2}\n+          transition={Bounce}\n+        />\n+      </div>\n+\n+      <main>\n+        <Outlet />\n+      </main>\n+\n+      <Footer />\n+    </>\n+  );\n+};\n+\n+export default MainLayout;\n"
+                },
+                {
+                    "date": 1754435293784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     <>\n       <div>\n         <Heading />\n         <ToastContainer\n-          className=\"mt-16 text-lg\"\n+          className=\" text-lg\"\n           position=\"top-center\"\n           autoClose={5000}\n           hideProgressBar={false}\n           newestOnTop={false}\n"
+                },
+                {
+                    "date": 1754435303238,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     <>\n       <div>\n         <Heading />\n         <ToastContainer\n-          className=\" text-lg\"\n+          className=\"mt-16 text-lg\"\n           position=\"top-center\"\n           autoClose={5000}\n           hideProgressBar={false}\n           newestOnTop={false}\n"
+                },
+                {
+                    "date": 1754437198384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,38 @@\n+import React from \"react\";\n+import { ToastContainer, Bounce, Slide } from \"react-toastify\";\n+import { Outlet } from \"react-router\";\n+import { Heading } from \"../components\";\n+import Footer from \"../components/Footer\";\n+\n+const MainLayout = () => {\n+  return (\n+    <>\n+      <div>\n+        <Heading />\n+        <ToastContainer\n+          className=\"mt-16 text-lg\"\n+          position=\"top-center\"\n+          autoClose={5000}\n+          hideProgressBar={false}\n+          newestOnTop={false}\n+          closeOnClick\n+          rtl={false}\n+          pauseOnFocusLoss\n+          draggable\n+          pauseOnHover\n+          theme=\"dark\"\n+          limit={2}\n+          transition={Bounce}\n+        />\n+      </div>\n+\n+      <main className=\"mx-4\">\n+        <Outlet />\n+      </main>\n+\n+      <Footer />\n+    </>\n+  );\n+};\n+\n+export default MainLayout;\n"
+                },
+                {
+                    "date": 1754437229317,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n           transition={Bounce}\n         />\n       </div>\n \n-      <main className=\"mx-4\">\n+      <main className=\"mx-6\">\n         <Outlet />\n       </main>\n \n       <Footer />\n"
+                }
+            ],
+            "date": 1754430930222,
+            "name": "Commit-0",
+            "content": "import React from \"react\";\nimport { Outlet } from \"react-router\";\n\nconst MainLayout = () => {\n  return (\n    <div>\n      <Heading />\n\n      <Outlet />\n    </div>\n  );\n};\n\nexport default MainLayout;\n"
+        }
+    ]
+}
