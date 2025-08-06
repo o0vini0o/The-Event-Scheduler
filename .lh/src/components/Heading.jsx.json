@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 8,
             "patches": [
                 {
                     "date": 1754443239248,
@@ -24,6 +24,22 @@
                 {
                     "date": 1754444398867,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,26 @@\n+import React from \"react\";\n+import { Link } from \"react-router\";\n+const Heading = () => {\n+  return (\n+    <header className=\"bg-neutral text-white flex flex-col items-center md:flex-row justify-between p-4 \">\n+      <h1 className=\"btn btn-ghost text-3xl\">Event Scheduler</h1>\n+      <nav>\n+        <ul className=\"flex flex-col sm:flex-row\">\n+          <Link className=\"btn btn-ghost\" to=\"/\">\n+            Home\n+          </Link>\n+          <Link className=\"btn btn-ghost\" to=\"/api/events/new\">\n+            Add Event\n+          </Link>\n+          <Link className=\"btn btn-ghost\" to=\"/\">\n+            Anmenden\n+          </Link>\n+          <Link className=\"btn btn-ghost\" to=\"/\">\n+            Abmelden\n+          </Link>\n+        </ul>\n+      </nav>\n+    </header>\n+  );\n+};\n+export default Heading;\n"
+                },
+                {
+                    "date": 1754464535834,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n           <Link className=\"btn btn-ghost\" to=\"/api/events/new\">\n             Add Event\n           </Link>\n           <Link className=\"btn btn-ghost\" to=\"/\">\n-            Anmenden\n+            Anmelden\n           </Link>\n           <Link className=\"btn btn-ghost\" to=\"/\">\n             Abmelden\n           </Link>\n"
+                },
+                {
+                    "date": 1754464637023,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n           </Link>\n           <Link className=\"btn btn-ghost\" to=\"/api/events/new\">\n             Add Event\n           </Link>\n-          <Link className=\"btn btn-ghost\" to=\"/\">\n+          <Link className=\"btn btn-ghost\" to=\"/login\">\n             Anmelden\n           </Link>\n           <Link className=\"btn btn-ghost\" to=\"/\">\n             Abmelden\n@@ -23,30 +23,4 @@\n     </header>\n   );\n };\n export default Heading;\n-import React from \"react\";\n-import { Link } from \"react-router\";\n-const Heading = () => {\n-  return (\n-    <header className=\"bg-neutral text-white flex flex-col items-center md:flex-row justify-between p-4 \">\n-      <h1 className=\"btn btn-ghost text-3xl\">Event Scheduler</h1>\n-      <nav>\n-        <ul className=\"flex flex-col sm:flex-row\">\n-          <Link className=\"btn btn-ghost\" to=\"/\">\n-            Home\n-          </Link>\n-          <Link className=\"btn btn-ghost\" to=\"/\">\n-            Add Event\n-          </Link>\n-          <Link className=\"btn btn-ghost\" to=\"/\">\n-            Anmenden\n-          </Link>\n-          <Link className=\"btn btn-ghost\" to=\"/\">\n-            Abmelden\n-          </Link>\n-        </ul>\n-      </nav>\n-    </header>\n-  );\n-};\n-export default Heading;\n"
+                },
+                {
+                    "date": 1754464746076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,26 @@\n+import React from \"react\";\n+import { Link } from \"react-router\";\n+const Heading = () => {\n+  return (\n+    <header className=\"bg-neutral text-white flex flex-col items-center md:flex-row justify-between p-4 \">\n+      <h1 className=\"btn btn-ghost text-3xl\">Event Scheduler</h1>\n+      <nav>\n+        <ul className=\"flex flex-col sm:flex-row\">\n+          <Link className=\"btn btn-ghost\" to=\"/\">\n+            Home\n+          </Link>\n+          <Link className=\"btn btn-ghost\" to=\"/api/events/new\">\n+            Add Event\n+          </Link>\n+          <Link className=\"btn btn-ghost\" to=\"/login\">\n+            Anmelden\n+          </Link>\n+          <Link className=\"btn btn-ghost\" to=\"/logout\">\n+            Abmelden\n+          </Link>\n+        </ul>\n+      </nav>\n+    </header>\n+  );\n+};\n+export default Heading;\n"
+                },
+                {
+                    "date": 1754464763453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,26 @@\n+import React from \"react\";\n+import { Link } from \"react-router\";\n+const Heading = () => {\n+  return (\n+    <header className=\"bg-neutral text-white flex flex-col items-center md:flex-row justify-between p-4 \">\n+      <h1 className=\"btn btn-ghost text-3xl\">Event Scheduler</h1>\n+      <nav>\n+        <ul className=\"flex flex-col sm:flex-row\">\n+          <Link className=\"btn btn-ghost\" to=\"/\">\n+            Home\n+          </Link>\n+          <Link className=\"btn btn-ghost\" to=\"/api/events/new\">\n+            Add Event\n+          </Link>\n+          <Link className=\"btn btn-ghost\" to=\"/login\">\n+            Anmelden\n+          </Link>\n+          <Link className=\"btn btn-ghost\" to=\"/logout\">\n+            Abmelden\n+          </Link>\n+        </ul>\n+      </nav>\n+    </header>\n+  );\n+};\n+export default Heading;\n"
                 }
             ],
             "date": 1754443239248,

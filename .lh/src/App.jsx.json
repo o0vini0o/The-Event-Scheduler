@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 7,
+            "activePatchIndex": 9,
             "patches": [
                 {
                     "date": 1754430796799,
@@ -36,6 +36,14 @@
                 {
                     "date": 1754444471820,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n import Homepage from \"./pages/Homepage\";\n import SignIn from \"./pages/SignIn\";\n import EventDetail from \"./pages/EventDetail\";\n import { EventContextProvider } from \"./context/EventContext\";\n+import CreateEvent from \"./pages/CreateEvent\";\n \n function App() {\n   return (\n     <EventContextProvider>\n@@ -18,9 +19,9 @@\n             <Route index element={<Homepage />} />\n             <Route path=\"/login\" element={<SignIn />} />\n             <Route path=\"/events/:id\" element={<EventDetail />} />\n \n-            <Route path=\"/api/events/new\" element={<EventForm />} />\n+            <Route path=\"/api/events/new\" element={<CreateEvent />} />\n           </Route>\n         </Routes>\n       </div>\n     </EventContextProvider>\n"
+                },
+                {
+                    "date": 1754464703748,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n         <Routes>\n           <Route path=\"/\" element={<MainLayout />}>\n             <Route index element={<Homepage />} />\n             <Route path=\"/login\" element={<SignIn />} />\n+            <Route path=\"/logout\" element={<SignUp />} />\n             <Route path=\"/events/:id\" element={<EventDetail />} />\n \n             <Route path=\"/api/events/new\" element={<CreateEvent />} />\n           </Route>\n"
+                },
+                {
+                    "date": 1754464771685,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n import { Routes, Route } from \"react-router\";\n import MainLayout from \"./layouts/MainLayout\";\n import Homepage from \"./pages/Homepage\";\n import SignIn from \"./pages/SignIn\";\n+import SignUp from \"./pages/SignUp\";\n import EventDetail from \"./pages/EventDetail\";\n import { EventContextProvider } from \"./context/EventContext\";\n import CreateEvent from \"./pages/CreateEvent\";\n \n"
                 }
             ],
             "date": 1754430796799,
