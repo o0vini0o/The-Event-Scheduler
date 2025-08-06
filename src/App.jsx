@@ -1,3 +1,4 @@
+
 import { Heading } from "./components";
 import { Routes, Route } from "react-router";
 import MainLayout from "./layouts/MainLayout";
@@ -25,6 +26,7 @@ function App() {
         </Routes>
       </div>
     </EventContextProvider>
+
   );
 }
 
