@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 13,
+            "activePatchIndex": 23,
             "patches": [
                 {
                     "date": 1754430796799,
@@ -60,6 +60,46 @@
                 {
                     "date": 1754467647517,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,37 +36,4 @@\n   );\n }\n \n export default App;\n-import { Heading } from \"./components\";\n-import { Routes, Route } from \"react-router\";\n-import MainLayout from \"./layouts/MainLayout\";\n-import Homepage from \"./pages/Homepage\";\n-import SignIn from \"./pages/SignIn\";\n-import SignUp from \"./pages/SignUp\";\n-import EventDetail from \"./pages/EventDetail\";\n-import { EventContextProvider } from \"./context/EventContext\";\n-import CreateEvent from \"./pages/CreateEvent\";\n-\n-function App() {\n-  return (\n-    <EventContextProvider>\n-      <div\n-        className=\"min-h-screen w-full grid grid-rows-[auto_1fr_auto]\n-          font-['Outfit']  \"\n-      >\n-        <Routes>\n-          <Route path=\"/\" element={<MainLayout />}>\n-            <Route index element={<Homepage />} />\n-            <Route path=\"/login\" element={<SignIn />} />\n-            <Route path=\"/logout\" element={<SignUp />} />\n-            <Route path=\"/events/:id\" element={<EventDetail />} />\n-\n-            <Route path=\"/api/events/new\" element={<CreateEvent />} />\n-          </Route>\n-        </Routes>\n-      </div>\n-    </EventContextProvider>\n-  );\n-}\n-\n-export default App;\n"
+                },
+                {
+                    "date": 1754469652773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,13 +10,13 @@\n import CreateEvent from \"./pages/CreateEvent\";\n \n function App() {\n   return (\n-    <EventContextProvider>\n-      <div\n-        className=\"min-h-screen w-full grid grid-rows-[auto_1fr_auto]\n+    <div\n+      className=\"min-h-screen w-full grid grid-rows-[auto_1fr_auto]\n           font-['Outfit']  \"\n-      >\n+    >\n+      <EventContextProvider>\n         <Routes>\n           <Route path=\"/\" element={<MainLayout />}>\n             <Route index element={<Homepage />} />\n             <Route path=\"/signin\" element={<SignIn />} />\n@@ -30,10 +30,10 @@\n             <Route path=\"/api/events/new\" element={<CreateEvent />} />\n             <Route path=\"/signUp\" element={<SignUp />} />\n           </Route>\n         </Routes>\n-      </div>\n-    </EventContextProvider>\n+      </EventContextProvider>\n+    </div>\n   );\n }\n \n export default App;\n"
+                },
+                {
+                    "date": 1754469735926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,15 @@\n             <Route index element={<Homepage />} />\n             <Route path=\"/api/events/new\" element={<CreateEvent />} />\n             <Route path=\"/signUp\" element={<SignUp />} />\n           </Route>\n+\n+           <Route path=\"*\" element={<NotFound />} />\n         </Routes>\n+        </Routes>\n+\n+\n+\n       </EventContextProvider>\n     </div>\n   );\n }\n"
+                },
+                {
+                    "date": 1754469752789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,14 +30,10 @@\n             <Route path=\"/api/events/new\" element={<CreateEvent />} />\n             <Route path=\"/signUp\" element={<SignUp />} />\n           </Route>\n \n-           <Route path=\"*\" element={<NotFound />} />\n+          <Route path=\"*\" element={<NotFound />} />\n         </Routes>\n-        </Routes>\n-\n-\n-\n       </EventContextProvider>\n     </div>\n   );\n }\n"
+                },
+                {
+                    "date": 1754469761207,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n import SignUp from \"./pages/SignUp\";\n import EventDetail from \"./pages/EventDetail\";\n import { EventContextProvider } from \"./context/EventContext\";\n import CreateEvent from \"./pages/CreateEvent\";\n+import NotFound from \"./pages/NotFound\";\n \n function App() {\n   return (\n     <div\n"
+                },
+                {
+                    "date": 1754470175182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,13 +24,10 @@\n             <Route path=\"/signUp\" element={<SignUp />} />\n             <Route path=\"/events/:id\" element={<EventDetail />} />\n           </Route>\n \n-          <Route>\n-            <Route path=\"/\" element={<ProtectedLayout />} />\n-            <Route index element={<Homepage />} />\n-            <Route path=\"/api/events/new\" element={<CreateEvent />} />\n-            <Route path=\"/signUp\" element={<SignUp />} />\n+          <Route path=\"/\" element={<ProtectedLayout />}>\n+            <Route path=\"/events/new\" element={<CreateEvent />} />\n           </Route>\n \n           <Route path=\"*\" element={<NotFound />} />\n         </Routes>\n"
+                },
+                {
+                    "date": 1754470290037,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,9 @@\n       <EventContextProvider>\n         <Routes>\n           <Route path=\"/\" element={<MainLayout />}>\n             <Route index element={<Homepage />} />\n+            <Route path=\"/events/new\" element={<CreateEvent />} />\n             <Route path=\"/signin\" element={<SignIn />} />\n             <Route path=\"/signUp\" element={<SignUp />} />\n             <Route path=\"/events/:id\" element={<EventDetail />} />\n           </Route>\n"
+                },
+                {
+                    "date": 1754470317042,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n       <EventContextProvider>\n         <Routes>\n           <Route path=\"/\" element={<MainLayout />}>\n             <Route index element={<Homepage />} />\n-            <Route path=\"/events/new\" element={<CreateEvent />} />\n+            <Route path=\"/api/events/new\" element={<CreateEvent />} />\n             <Route path=\"/signin\" element={<SignIn />} />\n             <Route path=\"/signUp\" element={<SignUp />} />\n             <Route path=\"/events/:id\" element={<EventDetail />} />\n           </Route>\n"
+                },
+                {
+                    "date": 1754470327629,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n             <Route path=\"/events/:id\" element={<EventDetail />} />\n           </Route>\n \n           <Route path=\"/\" element={<ProtectedLayout />}>\n-            <Route path=\"/events/new\" element={<CreateEvent />} />\n+            <Route path=\"/api/events/new\" element={<CreateEvent />} />\n           </Route>\n \n           <Route path=\"*\" element={<NotFound />} />\n         </Routes>\n"
+                },
+                {
+                    "date": 1754470360045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,14 +21,15 @@\n           <Route path=\"/\" element={<MainLayout />}>\n             <Route index element={<Homepage />} />\n             <Route path=\"/api/events/new\" element={<CreateEvent />} />\n             <Route path=\"/signin\" element={<SignIn />} />\n-            <Route path=\"/signUp\" element={<SignUp />} />\n+\n             <Route path=\"/events/:id\" element={<EventDetail />} />\n           </Route>\n \n           <Route path=\"/\" element={<ProtectedLayout />}>\n             <Route path=\"/api/events/new\" element={<CreateEvent />} />\n+            <Route path=\"/signUp\" element={<SignUp />} />\n           </Route>\n \n           <Route path=\"*\" element={<NotFound />} />\n         </Routes>\n"
+                },
+                {
+                    "date": 1754470471396,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,43 @@\n+import { Heading } from \"./components\";\n+import { Routes, Route } from \"react-router\";\n+import MainLayout from \"./layouts/MainLayout\";\n+import ProtectedLayout from \"./layouts/ProtectedLayout\";\n+import Homepage from \"./pages/Homepage\";\n+import SignIn from \"./pages/SignIn\";\n+import SignUp from \"./pages/SignUp\";\n+import EventDetail from \"./pages/EventDetail\";\n+import { EventContextProvider } from \"./context/EventContext\";\n+import CreateEvent from \"./pages/CreateEvent\";\n+import NotFound from \"./pages/NotFound\";\n+\n+function App() {\n+  return (\n+    <div\n+      className=\"min-h-screen w-full grid grid-rows-[auto_1fr_auto]\n+          font-['Outfit']  \"\n+    >\n+      <EventContextProvider>\n+        <Routes>\n+          <Route path=\"/\" element={<MainLayout />}>\n+            <Route index element={<Homepage />} />\n+            <Route path=\"/api/events/new\" element={<CreateEvent />} />\n+            <Route path=\"/signin\" element={<SignIn />} />\n+\n+            <Route path=\"/events/:id\" element={<EventDetail />} />\n+          </Route>\n+\n+          <Route path=\"/\" element={<ProtectedLayout />}>\n+            <Route index element={<Homepage />} />\n+            <Route path=\"/api/events/new\" element={<CreateEvent />} />\n+            <Route path=\"/signUp\" element={<SignUp />} />\n+            <Route path=\"/events/:id\" element={<EventDetail />} />\n+          </Route>\n+\n+          <Route path=\"*\" element={<NotFound />} />\n+        </Routes>\n+      </EventContextProvider>\n+    </div>\n+  );\n+}\n+\n+export default App;\n"
                 }
             ],
             "date": 1754430796799,

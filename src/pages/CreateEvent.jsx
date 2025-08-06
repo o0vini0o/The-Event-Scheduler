@@ -42,6 +42,7 @@ const CreateEvent = () => {
       if (!response.ok) {
         /*  const errorText = await response.text();
         console.error("Server response:", response.status, errorText); */
+        toast.error("Error creating event");
         throw new Error(`Error creating event: ${response.status}`);
       }
 

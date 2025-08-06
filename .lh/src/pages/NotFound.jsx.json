@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/pages/NotFound.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1754469710239,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1754469710239,
+            "name": "Commit-0",
+            "content": "import React from \"react\";\nimport { Link } from \"react-router\";\n\nconst NotFound = () => {\n  return (\n    <div className=\"min-h-[60vh] flex flex-col items-center justify-center text-center px-4\">\n      <div className=\"mb-8\">\n        <h1 className=\"text-9xl font-bold text-fuchsia-600 mb-4\">404</h1>\n        <h2 className=\"text-3xl font-semibold text-gray-400 mb-2\">\n          Oops! Page Not Found\n        </h2>\n        <p className=\"text-lg text-gray-600 max-w-md mx-auto\">\n          The page you're looking for doesn't exist. It might have been moved,\n          deleted, or you entered the wrong URL.\n        </p>\n      </div>\n\n      <div className=\"space-y-4\">\n        <Link to=\"/\" className=\"btn btn-primary btn-lg px-8\">\n          Go Back Home\n        </Link>\n      </div>\n\n      <div className=\"mt-12 text-6xl\">🛒</div>\n    </div>\n  );\n};\n\nexport default NotFound;\n"
+        }
+    ]
+}

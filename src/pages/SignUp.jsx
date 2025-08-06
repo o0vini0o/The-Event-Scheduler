@@ -35,7 +35,7 @@ const SignUp = () => {
 
   return (
     <div className="max-w-md mx-auto mt-20 flex flex-col items-center">
-      <form action={submitAction} className="grid grid-cols-1 gap-2 w-full">
+      <form action={submitAction} className="grid grid-cols-1 gap-2 ">
         {/* <label className="validator">
           <p className="font-bold"> Name: </p>
           <input

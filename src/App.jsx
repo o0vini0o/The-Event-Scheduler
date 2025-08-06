@@ -8,31 +8,35 @@ import SignUp from "./pages/SignUp";
 import EventDetail from "./pages/EventDetail";
 import { EventContextProvider } from "./context/EventContext";
 import CreateEvent from "./pages/CreateEvent";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
-    <EventContextProvider>
-      <div
-        className="min-h-screen w-full grid grid-rows-[auto_1fr_auto]
+    <div
+      className="min-h-screen w-full grid grid-rows-[auto_1fr_auto]
           font-['Outfit']  "
-      >
+    >
+      <EventContextProvider>
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Homepage />} />
+            <Route path="/api/events/new" element={<CreateEvent />} />
             <Route path="/signin" element={<SignIn />} />
+
+            <Route path="/events/:id" element={<EventDetail />} />
+          </Route>
+
+          <Route path="/" element={<ProtectedLayout />}>
+            <Route index element={<Homepage />} />
+            <Route path="/api/events/new" element={<CreateEvent />} />
             <Route path="/signUp" element={<SignUp />} />
             <Route path="/events/:id" element={<EventDetail />} />
           </Route>
 
-          <Route>
-            <Route path="/" element={<ProtectedLayout />} />
-            <Route index element={<Homepage />} />
-            <Route path="/api/events/new" element={<CreateEvent />} />
-            <Route path="/signUp" element={<SignUp />} />
-          </Route>
+          <Route path="*" element={<NotFound />} />
         </Routes>
-      </div>
-    </EventContextProvider>
+      </EventContextProvider>
+    </div>
   );
 }
 
