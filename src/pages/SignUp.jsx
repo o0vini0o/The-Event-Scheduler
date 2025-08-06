@@ -1,3 +1,5 @@
+import React from "react";
+
 import { useNavigate } from "react-router";
 import { ToastContainer, toast } from "react-toastify";
 
@@ -67,4 +69,5 @@ const SignUp = () => {
     </div>
   );
 };
+
 export default SignUp;

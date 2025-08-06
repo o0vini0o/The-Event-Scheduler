@@ -19,23 +19,14 @@ const EventCard = ({
   });
 
   return (
-    /*  <div className="h-full">
-      <h2>{title}</h2>
-      <p>{description}</p>
-      <p>{startDate}</p>
-      <p>{location}</p>
-      <div
-        ref={mapRef}
-        className="h-auto block w-full aspect-square object-contain"
-      ></div>
-    </div> */
-
     <div
       onClick={() => navigate(`/events/${id}`)}
       className="card card-lg  bg-base-100 h-full shadow-sm  transition-transform duration-200 hover:scale-105 hover:drop-shadow-[0_0_10px_gray]  border rounded-lg space-y-2 pt-2 "
     >
       <div className="card-body px-0 py-0 space-y-2 items-center text-center  ">
-        <h2 className="card-title border-b border-b-gray-300">{title}</h2>
+        <h2 className="card-title border-b border-b-gray-300 text-black">
+          {title}
+        </h2>
 
         <p className="card-text ">{description}</p>
 
@@ -46,7 +37,7 @@ const EventCard = ({
             ":" +
             date.split("T")[1].split(":")[1]}
         </p>
-        <p>{location}</p>
+        <p className="text-black">{location}</p>
       </div>
 
       <figure>

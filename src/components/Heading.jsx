@@ -1,4 +1,3 @@
-
 import React from "react";
 
 import { Link } from "react-router";
@@ -8,20 +7,18 @@ const Heading = () => {
       <h1 className="btn btn-ghost text-3xl">Event Scheduler</h1>
       <nav>
         <ul className="flex flex-col sm:flex-row">
-
           <Link className="btn btn-ghost" to="/">
             Home
           </Link>
           <Link className="btn btn-ghost" to="/api/events/new">
             Add Event
           </Link>
-          <Link className="btn btn-ghost" to="/">
-            Anmenden
+          <Link className="btn btn-ghost" to="/signin">
+            Anmelden
           </Link>
           <Link className="btn btn-ghost" to="/">
             Abmelden
           </Link>
-
         </ul>
       </nav>
     </header>

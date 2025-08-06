@@ -9,9 +9,10 @@ import { useNavigate } from "react-router";
 const CreateEvent = () => {
   const { events, setEvents } = useEvents();
   const navigate = useNavigate();
+
   const createAction = async formData => {
     //todo: check if user is logged in and if not redirect to login page (localstorage can be used to retrieve the token )
-    const authToken = localStorage.getItem("authToken");
+    const authToken = JSON.parse(localStorage.getItem("token"));
     console.log("authToken", authToken);
 
     if (!authToken) {
@@ -32,16 +33,16 @@ const CreateEvent = () => {
       const response = await fetch("http://localhost:3001/api/events", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          // Include the token in the Authorization header
+          Authorization: `Bearer ${authToken}`
         },
         body: JSON.stringify(data)
       });
       if (!response.ok) {
-        const errorText = await response.text();
-        console.error("Server response:", response.status, errorText);
-        throw new Error(
-          `Error creating event: ${response.status} - ${errorText}`
-        );
+        /*  const errorText = await response.text();
+        console.error("Server response:", response.status, errorText); */
+        throw new Error(`Error creating event: ${response.status}`);
       }
 
       const newEvent = await response.json(); // Get the actual created event
@@ -66,7 +67,7 @@ const CreateEvent = () => {
   "longitude": 49.01438194665317 */
   return (
     <form action={createAction}>
-      <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xl mx-auto mt-16 border p-4">
+      <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-sm mx-auto mt-16 border p-4 text-black">
         <legend className="fieldset-legend text-xl">Create Event</legend>
         <label htmlFor="title" className="label">
           Title
