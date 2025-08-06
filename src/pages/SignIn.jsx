@@ -5,7 +5,6 @@ const SignIn = () => {
   const submitAction = async (formData) => {
     const email = formData.get("email");
     const password = formData.get("password");
-
     try {
       const res = await fetch("http://localhost:3001/api/auth/login", {
         method: "POST",
