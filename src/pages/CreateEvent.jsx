@@ -66,7 +66,7 @@ const CreateEvent = () => {
   "longitude": 49.01438194665317 */
   return (
     <form action={createAction}>
-      <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xl mx-auto mt-16 border p-4">
+      <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-sm mx-auto mt-16 border p-4 text-black">
         <legend className="fieldset-legend text-xl">Create Event</legend>
         <label htmlFor="title" className="label">
           Title

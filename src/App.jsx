@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router";
 import MainLayout from "./layouts/MainLayout";
 import Homepage from "./pages/Homepage";
 import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 import EventDetail from "./pages/EventDetail";
 import { EventContextProvider } from "./context/EventContext";
 import CreateEvent from "./pages/CreateEvent";
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Homepage />} />
             <Route path="/login" element={<SignIn />} />
+            <Route path="/logout" element={<SignUp />} />
             <Route path="/events/:id" element={<EventDetail />} />
 
             <Route path="/api/events/new" element={<CreateEvent />} />

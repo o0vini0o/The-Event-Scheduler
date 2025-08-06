@@ -15,10 +15,10 @@ const Heading = () => {
           <Link className="btn btn-ghost" to="/api/events/new">
             Add Event
           </Link>
-          <Link className="btn btn-ghost" to="/">
-            Anmenden
+          <Link className="btn btn-ghost" to="/login">
+            Anmelden
           </Link>
-          <Link className="btn btn-ghost" to="/">
+          <Link className="btn btn-ghost" to="/logout">
             Abmelden
           </Link>
 

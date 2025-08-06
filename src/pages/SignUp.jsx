@@ -1,7 +1,9 @@
+import React from "react";
+
 import { useNavigate } from "react-router";
 const SignUp = () => {
   const navigate = useNavigate();
-  const submitAction = async (formData) => {
+  const submitAction = async formData => {
     // const name = formData.get("name");
     const email = formData.get("email");
     const password = formData.get("password");
@@ -10,13 +12,13 @@ const SignUp = () => {
       const res = await fetch("http://localhost:3001/api/users/", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
           // name: name,
           email: email,
-          password: password,
-        }),
+          password: password
+        })
       });
       if (!res.ok) {
         const errorData = await res.json();
@@ -94,4 +96,5 @@ const SignUp = () => {
     </div>
   );
 };
+
 export default SignUp;
