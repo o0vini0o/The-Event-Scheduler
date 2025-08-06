@@ -5,10 +5,10 @@ import { ToastContainer, toast } from "react-toastify";
 
 const SignUp = () => {
   const navigate = useNavigate();
+  const sleep = async (ms) => new Promise((res) => setTimeout(res, ms));
   const submitAction = async (formData) => {
     const email = formData.get("email");
     const password = formData.get("password");
-    const sleep = async (ms) => new Promise((res) => setTimeout(res, ms));
     try {
       const res = await fetch("http://localhost:3001/api/users/", {
         method: "POST",
@@ -22,11 +22,12 @@ const SignUp = () => {
       });
       if (!res.ok) {
         const errorData = await res.json();
-        toast(errorData.error);
+        toast.error(errorData.error);
         return;
       }
       const data = await res.json();
-      await sleep(1000);
+      toast("Registierung erfolgreich!");
+      await sleep(3000);
       navigate("/signin");
       console.log(data);
     } catch (error) {

@@ -1,8 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router";
 import Homepage from "../pages/Homepage";
-import Footer from "../components/Footer";
-import { Heading } from "../components";
+import { Heading, Footer } from "../components";
 
 const ProtectedLayout = () => {
   return (
