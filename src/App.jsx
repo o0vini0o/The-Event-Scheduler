@@ -4,6 +4,7 @@ import { CreateEvent, Homepage, SignIn, SignUp, EventDetail } from "./pages";
 import MainLayout from "./layouts/MainLayout";
 import ProtectedLayout from "./layouts/ProtectedLayout";
 import { EventContextProvider } from "./context/EventContext";
+import NotFound from "./pages/NotFound";
 import { AuthContextProvider } from "./context/AuthContext";
 
 function App() {
@@ -18,16 +19,13 @@ function App() {
             <Route path="/" element={<MainLayout />}>
               <Route index element={<Homepage />} />
               <Route path="/signin" element={<SignIn />} />
-              <Route path="/signUp" element={<SignUp />} />
               <Route path="/events/:id" element={<EventDetail />} />
             </Route>
 
-            <Route>
-              <Route path="/" element={<ProtectedLayout />} />
-              <Route index element={<Homepage />} />
+            <Route element={<ProtectedLayout />}>
               <Route path="/api/events/new" element={<CreateEvent />} />
-              <Route path="/signUp" element={<SignUp />} />
             </Route>
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
       </AuthContextProvider>

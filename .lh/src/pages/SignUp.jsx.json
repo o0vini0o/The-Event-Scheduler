@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1754464714607,
@@ -12,6 +12,10 @@
                 {
                     "date": 1754465345030,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,8 @@\n-<<<<<<< HEAD\n+\n import React from \"react\";\n \n-const SignUp = () => {\n-  return <div>SignUp</div>;\n-};\n \n-=======\n import { useNavigate } from \"react-router\";\n const SignUp = () => {\n   const navigate = useNavigate();\n   const submitAction = async (formData) => {\n"
+                },
+                {
+                    "date": 1754470630343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n   };\n \n   return (\n     <div className=\"max-w-md mx-auto mt-20 flex flex-col items-center\">\n-      <form action={submitAction} className=\"grid grid-cols-1 gap-2 w-full\">\n+      <form action={submitAction} className=\"grid grid-cols-1 gap-2 \">\n         {/* <label className=\"validator\">\n           <p className=\"font-bold\"> Name: </p>\n           <input\n             className=\"input w-64\"\n"
                 }
             ],
             "date": 1754464714607,

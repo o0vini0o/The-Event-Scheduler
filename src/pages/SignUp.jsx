@@ -27,7 +27,7 @@ const SignUp = () => {
       }
       const data = await res.json();
       toast("Registierung erfolgreich!");
-      await sleep(3000);
+      await sleep(5000);
       navigate("/signin");
       console.log(data);
     } catch (error) {
