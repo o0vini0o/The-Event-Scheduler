@@ -1,43 +1,18 @@
-import React from "react";
-
 import { useNavigate } from "react-router";
-import { ToastContainer, toast } from "react-toastify";
+import { createSubmitAction } from "../components/shared/createSubmitAction";
 
 const SignUp = () => {
   const navigate = useNavigate();
-  const sleep = async (ms) => new Promise((res) => setTimeout(res, ms));
-  const submitAction = async (formData) => {
-    const email = formData.get("email");
-    const password = formData.get("password");
-    try {
-      const res = await fetch("http://localhost:3001/api/users/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: email,
-          password: password,
-        }),
-      });
-      if (!res.ok) {
-        const errorData = await res.json();
-        toast.error(errorData.error);
-        return;
-      }
-      const data = await res.json();
-      toast("Registierung erfolgreich!");
-      await sleep(5000);
-      navigate("/signin");
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+
+  const submitAction = createSubmitAction({
+    url: "http://localhost:3001/api/users/",
+    successMessage: "Registierung erfolgreich!",
+    onSuccess: () => navigate("/signin"),
+  });
 
   return (
     <div className="max-w-md mx-auto mt-20 flex flex-col items-center">
-      <form action={submitAction} className="grid grid-cols-1 gap-2 w-full">
+      <form action={submitAction} className="grid grid-cols-1 gap-2">
         <label className="validator">
           <span className=" flex font-bold"> Email: </span>
           <input
@@ -66,7 +41,6 @@ const SignUp = () => {
           registeren
         </button>
       </form>
-      <ToastContainer />
     </div>
   );
 };

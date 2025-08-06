@@ -1,5 +1,5 @@
 import { Navigate, Outlet } from "react-router";
-import { ToastContainer, Bounce, Slide } from "react-toastify";
+import { ToastContainer, Bounce } from "react-toastify";
 import { Heading, Footer } from "../components";
 import { useAuth } from "../context/AuthContext";
 
@@ -15,7 +15,7 @@ const ProtectedLayout = () => {
         <ToastContainer
           className="mt-16 text-lg"
           position="top-center"
-          autoClose={5000}
+          autoClose={3000}
           hideProgressBar={false}
           newestOnTop={false}
           closeOnClick

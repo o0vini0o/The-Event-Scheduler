@@ -1,11 +1,15 @@
-import { Heading } from "./components";
 import { Routes, Route } from "react-router";
-import { CreateEvent, Homepage, SignIn, SignUp, EventDetail } from "./pages";
+import {
+  CreateEvent,
+  Homepage,
+  SignIn,
+  SignUp,
+  EventDetail,
+  NotFound,
+} from "./pages";
 import MainLayout from "./layouts/MainLayout";
 import ProtectedLayout from "./layouts/ProtectedLayout";
-import { EventContextProvider } from "./context/EventContext";
-import NotFound from "./pages/NotFound";
-import { AuthContextProvider } from "./context/AuthContext";
+import { EventContextProvider, AuthContextProvider } from "./context";
 
 function App() {
   return (
@@ -19,6 +23,7 @@ function App() {
             <Route path="/" element={<MainLayout />}>
               <Route index element={<Homepage />} />
               <Route path="/signin" element={<SignIn />} />
+              <Route path="/signup" element={<SignUp />} />
               <Route path="/events/:id" element={<EventDetail />} />
             </Route>
 

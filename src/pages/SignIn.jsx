@@ -1,42 +1,20 @@
-import { ToastContainer, toast } from "react-toastify";
-
+import { createSubmitAction } from "../components/shared/createSubmitAction";
 import { Link, useNavigate } from "react-router";
 import { useAuth } from "../context/AuthContext";
 const SignIn = () => {
   const { setIsLogIn } = useAuth();
   const navigate = useNavigate();
-  const sleep = async (ms) => new Promise((res) => setTimeout(res, ms));
-  const submitAction = async (formData) => {
-    const email = formData.get("email");
-    const password = formData.get("password");
 
-    try {
-      const res = await fetch("http://localhost:3001/api/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: email,
-          password: password,
-        }),
-      });
-      if (!res.ok) {
-        const errorData = await res.json();
-        toast.error(errorData.error);
-        return;
-      }
-      const data = await res.json();
+  const submitAction = createSubmitAction({
+    url: "http://localhost:3001/api/auth/login",
+    successMessage: "Anmeldung erfolgreich",
+    onSuccess: (data) => {
       const token = data.token;
       setIsLogIn(true);
       localStorage.setItem("token", JSON.stringify(token));
-      toast("Anmeldung erfolgreich");
-      await sleep(5000);
       navigate("/");
-    } catch (error) {
-      console.error(error);
-    }
-  };
+    },
+  });
 
   return (
     <div className="max-w-md mx-auto mt-20 flex flex-col items-center">
@@ -72,7 +50,6 @@ const SignIn = () => {
           anmelden
         </button>
       </form>
-      <ToastContainer />
     </div>
   );
 };

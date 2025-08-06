@@ -2,11 +2,11 @@ import { Link } from "react-router";
 import { useAuth } from "../context/AuthContext";
 const Heading = () => {
   const { isLogIn, logout } = useAuth();
-  console.log(isLogIn);
-
   return (
     <header className="bg-neutral text-white flex flex-col items-center md:flex-row justify-between p-4 ">
-      <h1 className="btn btn-ghost text-3xl">Event Scheduler</h1>
+      <h1 className="btn btn-ghost text-3xl">
+        <Link to="/">Event Scheduler</Link>{" "}
+      </h1>
       <nav>
         <ul className="flex flex-col sm:flex-row">
           <Link className="btn btn-ghost" to="/">
