@@ -1,12 +1,10 @@
-
 import React from "react";
-
 
 import { Link, useNavigate } from "react-router";
 
 const SignIn = () => {
   const navigate = useNavigate();
-  const submitAction = async (formData) => {
+  const submitAction = async formData => {
     const email = formData.get("email");
     const password = formData.get("password");
 
@@ -14,12 +12,12 @@ const SignIn = () => {
       const res = await fetch("http://localhost:3001/api/auth/login", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
           email: email,
-          password: password,
-        }),
+          password: password
+        })
       });
       if (!res.ok) {
         const errorData = await res.json();
@@ -38,7 +36,7 @@ const SignIn = () => {
 
   return (
     <div className="max-w-md mx-auto mt-20 flex flex-col items-center">
-      <form action={submitAction} className="grid grid-cols-1 gap-2 w-full">
+      <form action={submitAction} className="grid grid-cols-1 gap-2 ">
         <label className="validator">
           <span className=" flex font-bold"> Email: </span>
           <input

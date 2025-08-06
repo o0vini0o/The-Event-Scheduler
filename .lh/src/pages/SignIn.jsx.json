@@ -3,11 +3,15 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 1,
             "patches": [
                 {
                     "date": 1754432198756,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1754470700751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,75 @@\n import React from \"react\";\n \n+import { Link, useNavigate } from \"react-router\";\n+\n const SignIn = () => {\n-  return <div>SignIn</div>;\n+  const navigate = useNavigate();\n+  const submitAction = async formData => {\n+    const email = formData.get(\"email\");\n+    const password = formData.get(\"password\");\n+\n+    try {\n+      const res = await fetch(\"http://localhost:3001/api/auth/login\", {\n+        method: \"POST\",\n+        headers: {\n+          \"Content-Type\": \"application/json\"\n+        },\n+        body: JSON.stringify({\n+          email: email,\n+          password: password\n+        })\n+      });\n+      if (!res.ok) {\n+        const errorData = await res.json();\n+        alert(errorData.error);\n+        return;\n+      }\n+      const data = await res.json();\n+      const token = data.token;\n+      navigate(\"/\");\n+      localStorage.setItem(\"token\", JSON.stringify(token));\n+      console.log(data);\n+    } catch (error) {\n+      console.log(error);\n+    }\n+  };\n+\n+  return (\n+    <div className=\"max-w-md mx-auto mt-20 flex flex-col items-center\">\n+      <form action={submitAction} className=\"grid grid-cols-1 gap-2 \">\n+        <label className=\"validator\">\n+          <span className=\" flex font-bold\"> Email: </span>\n+          <input\n+            className=\"input w-64\"\n+            type=\"email\"\n+            name=\"email\"\n+            placeholder=\"excample@email.com\"\n+            required\n+          />\n+        </label>\n+        <div className=\"validator-hint hidden\">Enter valid email address</div>\n+        <label className=\"validator\">\n+          <span className=\" flex font-bold\"> Password: </span>\n+          <input\n+            className=\"input w-64\"\n+            type=\"password\"\n+            name=\"password\"\n+            required\n+            placeholder=\"Password\"\n+            minLength=\"8\"\n+            title=\"Must be more than 8 characters\"\n+          />\n+        </label>\n+        <p className=\"validator-hint hidden\">Must be more than 8 characters</p>\n+        <Link to=\"/signUp\" className=\"link text-blue-500 text-sm \">\n+          Neu Konto erstellen!\n+        </Link>\n+        <button type=\"submit\" className=\"btn btn-accent w-64\">\n+          anmelden\n+        </button>\n+      </form>\n+    </div>\n+  );\n };\n \n export default SignIn;\n"
                 }
             ],
             "date": 1754432198756,
