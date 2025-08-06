@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/context/AuthContent.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1754467824451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1754467851784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,9 @@\n+import React, { createContext } from \"react\";\n+\n+const AuthContent = createContext();\n+\n+const AuthContextProvider = ({ children }) => {\n+  return <AuthContext value={{}}>{children}</AuthContext>;\n+};\n+\n+export default AuthContent;\n"
+                }
+            ],
+            "date": 1754467824451,
+            "name": "Commit-0",
+            "content": "import React, { createContext } from \"react\";\n\nconst AuthContent = createContext();\n\nconst AuthContextProvider = ({ children }) => {\n  return <AuthContext value={{}}>{children}</AuthContext>;\n};\n\nexport default AuthContent;\n"
+        }
+    ]
+}

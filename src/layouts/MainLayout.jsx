@@ -1,4 +1,3 @@
-
 import React from "react";
 import { ToastContainer, Bounce, Slide } from "react-toastify";
 import { Outlet } from "react-router";
@@ -12,6 +11,7 @@ const MainLayout = () => {
       <main className="contain mx-auto p-4">
         <Outlet />
       </main>
+      <Footer />
     </div>
   );
 };
