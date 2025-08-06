@@ -1,4 +1,6 @@
+
 import React from "react";
+
 import { Link } from "react-router";
 const Heading = () => {
   return (
@@ -6,6 +8,7 @@ const Heading = () => {
       <h1 className="btn btn-ghost text-3xl">Event Scheduler</h1>
       <nav>
         <ul className="flex flex-col sm:flex-row">
+
           <Link className="btn btn-ghost" to="/">
             Home
           </Link>
@@ -18,6 +21,7 @@ const Heading = () => {
           <Link className="btn btn-ghost" to="/logout">
             Abmelden
           </Link>
+
         </ul>
       </nav>
     </header>

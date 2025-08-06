@@ -1,3 +1,4 @@
+
 import EventCard from "../components/EventCard";
 
 import useEvents from "../hooks/useEvents";
@@ -27,5 +28,6 @@ const Homepage = () => {
     </div>
   );
 };
+
 
 export default Homepage;
