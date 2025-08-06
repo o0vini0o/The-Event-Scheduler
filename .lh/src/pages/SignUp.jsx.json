@@ -3,11 +3,15 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 1,
             "patches": [
                 {
                     "date": 1754464714607,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1754465345030,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,8 @@\n-<<<<<<< HEAD\n+\n import React from \"react\";\n \n-const SignUp = () => {\n-  return <div>SignUp</div>;\n-};\n \n-=======\n import { useNavigate } from \"react-router\";\n const SignUp = () => {\n   const navigate = useNavigate();\n   const submitAction = async (formData) => {\n"
                 }
             ],
             "date": 1754464714607,

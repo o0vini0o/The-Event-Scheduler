@@ -1,15 +1,9 @@
-<<<<<<< HEAD
 import React from "react";
 
-const SignUp = () => {
-  return <div>SignUp</div>;
-};
-
-=======
 import { useNavigate } from "react-router";
 const SignUp = () => {
   const navigate = useNavigate();
-  const submitAction = async (formData) => {
+  const submitAction = async formData => {
     // const name = formData.get("name");
     const email = formData.get("email");
     const password = formData.get("password");
@@ -18,13 +12,13 @@ const SignUp = () => {
       const res = await fetch("http://localhost:3001/api/users/", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
           // name: name,
           email: email,
-          password: password,
-        }),
+          password: password
+        })
       });
       if (!res.ok) {
         const errorData = await res.json();
@@ -102,5 +96,5 @@ const SignUp = () => {
     </div>
   );
 };
->>>>>>> 0e155d386dddcdafe143c9b24202d645fabe2c7b
+
 export default SignUp;
