@@ -7,8 +7,7 @@ import {
   EventDetail,
   NotFound,
 } from "./pages";
-import MainLayout from "./layouts/MainLayout";
-import ProtectedLayout from "./layouts/ProtectedLayout";
+import { MainLayout, ProtectedLayout } from "./layouts";
 import { EventContextProvider, AuthContextProvider } from "./context";
 
 function App() {

@@ -1,6 +1,7 @@
 import { createSubmitAction } from "../components/shared/createSubmitAction";
 import { Link, useNavigate } from "react-router";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../context";
+import { SubmitBtn } from "../components";
 const SignIn = () => {
   const { setIsLogIn } = useAuth();
   const navigate = useNavigate();
@@ -46,9 +47,7 @@ const SignIn = () => {
         <Link to="/signUp" className="link text-blue-500 text-sm ">
           Neu Konto erstellen!
         </Link>
-        <button type="submit" className="btn btn-accent w-64">
-          anmelden
-        </button>
+        <SubmitBtn>Anmelden</SubmitBtn>
       </form>
     </div>
   );

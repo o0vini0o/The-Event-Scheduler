@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect } from "react";
 
 const EventContext = createContext();
 
@@ -17,7 +17,7 @@ export const EventContextProvider = ({ children }) => {
           throw new Error("Error fetching data");
         }
         const data = await response.json();
-        console.log("data", data);
+
         // return data;
         setEvents(data.results);
         setError(false);

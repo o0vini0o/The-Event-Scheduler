@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import { createSubmitAction } from "../components/shared/createSubmitAction";
+import { SubmitBtn, createSubmitAction } from "../components";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -37,9 +37,7 @@ const SignUp = () => {
           />
         </label>
         <p className="validator-hint hidden">Must be more than 8 characters</p>
-        <button type="submit" className="btn btn-accent w-64">
-          registeren
-        </button>
+        <SubmitBtn>Registieren</SubmitBtn>
       </form>
     </div>
   );

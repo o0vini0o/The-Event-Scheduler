@@ -1,7 +1,7 @@
 import { Navigate, Outlet } from "react-router";
 import { ToastContainer, Bounce } from "react-toastify";
 import { Heading, Footer } from "../components";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../context";
 
 const ProtectedLayout = () => {
   const { isLogIn } = useAuth();
