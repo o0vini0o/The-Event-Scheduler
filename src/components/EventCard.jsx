@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router";
 import "leaflet/dist/leaflet.css"; // import leaflet css
-import useLeafletMap from "../hooks/useLeafletMap";
+import { useLeafletMap } from "../hooks";
 
 const EventCard = ({
   id,
@@ -10,12 +10,12 @@ const EventCard = ({
   date,
   location,
   latitude,
-  longitude
+  longitude,
 }) => {
   const navigate = useNavigate();
   const mapRef = useLeafletMap(latitude, longitude, {
     zoom: 13,
-    popupText: location
+    popupText: location,
   });
 
   return (

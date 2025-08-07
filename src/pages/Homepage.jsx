@@ -1,12 +1,9 @@
-
-import EventCard from "../components/EventCard";
-
-import useEvents from "../hooks/useEvents";
+import { EventCard } from "../components";
+import { useEvents } from "../hooks";
 // Fetch events (GET /api/events) and render them as cards sorted chronologically.
 const Homepage = () => {
   const { events, isLoading, error } = useEvents();
 
-  console.log("events", events);
   if (isLoading) {
     return (
       <div className="flex w-full h-full flex-col gap-4">
@@ -22,12 +19,11 @@ const Homepage = () => {
   }
   return (
     <div className="grid min-h-full  gap-6  mx-0 my-16 text-gray-400 grid-cols-2 sm:grid-cols-[repeat(auto-fill,minmax(250px,1fr))]   auto-rows-min ">
-      {events.map(event => {
+      {events.map((event) => {
         return <EventCard key={event.id} {...event} />;
       })}
     </div>
   );
 };
-
 
 export default Homepage;

@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import useEvents from "../hooks/useEvents";
 import useLeafletMap from "../hooks/useLeafletMap";
 
 const EventDetail = () => {
@@ -8,7 +7,7 @@ const EventDetail = () => {
   const [event, setEvent] = useState({});
   const mapRef = useLeafletMap(event.latitude, event.longitude, {
     zoom: 13,
-    popupText: event.location
+    popupText: event.location,
   });
 
   const { id } = useParams();
@@ -24,10 +23,10 @@ const EventDetail = () => {
         const data = await response.json();
         console.log("event data", data);
         // return data;
-        setEvent(prev => {
+        setEvent((prev) => {
           return {
             ...prev,
-            ...data
+            ...data,
           };
         });
         // return data;

@@ -1,8 +1,6 @@
-import React from "react";
-import { ToastContainer, Bounce, Slide } from "react-toastify";
+import { ToastContainer, Bounce } from "react-toastify";
 import { Outlet } from "react-router";
-import Heading from "../components/Heading";
-import Footer from "../components/Footer";
+import { Heading, Footer } from "../components";
 
 const MainLayout = () => {
   return (
@@ -12,7 +10,7 @@ const MainLayout = () => {
         <ToastContainer
           className="mt-16 text-lg"
           position="top-center"
-          autoClose={5000}
+          autoClose={2000}
           hideProgressBar={false}
           newestOnTop={false}
           closeOnClick
@@ -25,7 +23,7 @@ const MainLayout = () => {
           transition={Bounce}
         />
       </div>
-      <main className=" w-full mx-auto p-4">
+      <main className="w-full mx-auto p-4">
         <Outlet />
       </main>
       <Footer />

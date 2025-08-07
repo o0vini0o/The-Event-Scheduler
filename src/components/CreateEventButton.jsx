@@ -1,4 +1,3 @@
-import React from "react";
 import { useFormStatus } from "react-dom";
 const CreateEventButton = () => {
   const { pending } = useFormStatus();

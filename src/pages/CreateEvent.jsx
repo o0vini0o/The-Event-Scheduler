@@ -1,16 +1,13 @@
-import React from "react";
 import { toast } from "react-toastify";
-import useEvents from "../hooks/useEvents";
-
-import CreateEventButton from "../components/CreateEventButton";
-
+import { useEvents } from "../hooks";
+import { CreateEventButton } from "../components";
 import { useNavigate } from "react-router";
 
 const CreateEvent = () => {
   const { events, setEvents } = useEvents();
   const navigate = useNavigate();
 
-  const createAction = async formData => {
+  const createAction = async (formData) => {
     //todo: check if user is logged in and if not redirect to login page (localstorage can be used to retrieve the token )
     const authToken = JSON.parse(localStorage.getItem("token"));
     console.log("authToken", authToken);
@@ -35,9 +32,9 @@ const CreateEvent = () => {
         headers: {
           "Content-Type": "application/json",
           // Include the token in the Authorization header
-          Authorization: `Bearer ${authToken}`
+          Authorization: `Bearer ${authToken}`,
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
       });
       if (!response.ok) {
         /*  const errorText = await response.text();
@@ -48,7 +45,7 @@ const CreateEvent = () => {
 
       const newEvent = await response.json(); // Get the actual created event
       console.log("newEvent", newEvent);
-      setEvents(prev => [...prev, newEvent]); // Add the server response
+      setEvents((prev) => [...prev, newEvent]); // Add the server response
 
       // Navigate to home page on successful POST
       navigate("/");

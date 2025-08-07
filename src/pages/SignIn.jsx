@@ -1,38 +1,21 @@
-import React from "react";
-
+import { createSubmitAction } from "../components/shared/createSubmitAction";
 import { Link, useNavigate } from "react-router";
-
+import { useAuth } from "../context";
+import { SubmitBtn } from "../components";
 const SignIn = () => {
+  const { setIsLogIn } = useAuth();
   const navigate = useNavigate();
-  const submitAction = async formData => {
-    const email = formData.get("email");
-    const password = formData.get("password");
 
-    try {
-      const res = await fetch("http://localhost:3001/api/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          email: email,
-          password: password
-        })
-      });
-      if (!res.ok) {
-        const errorData = await res.json();
-        alert(errorData.error);
-        return;
-      }
-      const data = await res.json();
+  const submitAction = createSubmitAction({
+    url: "http://localhost:3001/api/auth/login",
+    successMessage: "Anmeldung erfolgreich",
+    onSuccess: (data) => {
       const token = data.token;
-      navigate("/");
+      setIsLogIn(true);
       localStorage.setItem("token", JSON.stringify(token));
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+      navigate("/");
+    },
+  });
 
   return (
     <div className="max-w-md mx-auto mt-20 flex flex-col items-center">
@@ -64,9 +47,7 @@ const SignIn = () => {
         <Link to="/signUp" className="link text-blue-500 text-sm ">
           Neu Konto erstellen!
         </Link>
-        <button type="submit" className="btn btn-accent w-64">
-          anmelden
-        </button>
+        <SubmitBtn>Anmelden</SubmitBtn>
       </form>
     </div>
   );
